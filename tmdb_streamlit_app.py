@@ -32,12 +32,15 @@ def load_data():
 
     return df
 
-@st.cache_resource
-def build_similarity_matrix(genres_series: pd.Series):
-    cv = CountVectorizer()
-    genre_matrix = cv.fit_transform(genres_series)
-    cosine_sim = cosine_similarity(genre_matrix)
-    return cosine_sim
+@st.cache_data
+def load_data():
+    url = "https://raw.githubusercontent.com/plotly/datasets/master/tmdb_5000_movies.csv"
+    df = pd.read_csv(url)
+
+    df = df.dropna(subset=['title'])
+    df['genres'] = df['genres'].astype(str)
+
+    return df
 
 
 def recommend_movies(df: pd.DataFrame, cosine_sim, movie_title: str, n_recommendations: int = 5):
