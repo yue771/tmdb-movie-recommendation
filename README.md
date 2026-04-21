@@ -26,12 +26,10 @@ This project analyzes movie data from TMDB and builds a recommendation system ba
 - Most movies fall between ratings 6–8
 - Revenue is weakly correlated with rating
 - Genre plays a major role in movie similarity
-- 
+
 ## 😊 DATASET
 - Full TMDB Movies Dataset 2024 (1M Movies)
 - https://www.kaggle.com/datasets/asaniczka/tmdb-movies-dataset-2023-930k-movies
-
-
 
 ## 🚀 Future Improvements
 - Add NLP on movie descriptions
